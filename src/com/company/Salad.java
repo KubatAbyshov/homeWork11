@@ -2,26 +2,18 @@ package com.company;
 
 public class Salad extends Food implements Printable {
 
-    private String name;
+
     private int weight;
 
-    public Salad(String name, int weight) {
-        this.name = name;
+    public Salad( int weight) {
+       setName("Salad");
         this.weight = weight;
     }
 
     @Override
     public void print() {
-        System.out.println(name + " - " + weight + " " + "гр");
+        System.out.println( getName()+ " - " + weight + " " + "гр");
 
 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getWeight() {
-        return weight;
     }
 }

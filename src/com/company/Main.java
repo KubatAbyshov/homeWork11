@@ -3,64 +3,28 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-
-
-
-//////////////////////////////////////////////////////////////////
-
-        createObject("3");
-        System.out.println("|||||||||||||||||||||||||||||");
-
-///////////////////////////////////////////////////////////////////
-
-        Beshbarmak beshbarmak = new Beshbarmak("Бешбармак", 200);
-        beshbarmak.print();
-        System.out.println("--------------------------");
-
-        Cake cake = new Cake("Пирожное \"Наполеон\"", "Ужин");
-        cake.print();
-        System.out.println("--------------------------");
-
-        Solyanka solyanka = new Solyanka("Солянка", "Колбаса, Оливки, Перец, Морковь");
-        solyanka.print();
-        System.out.println("--------------------------");
-
-        Salad salad = new Salad("Греческий салат", 300);
-        salad.print();
-        System.out.println("--------------------------");
-
+        createObject("Cake").print();
+        createObject("Salad").print();
+        createObject("Solyanka").print();
 
     }
 
-    public static String createObject(String className) {
 
-
+    public static Printable createObject(String className) {
+        Printable printable=null;
         switch (className) {
-            case "2": {
-                Beshbarmak besh = new Beshbarmak("Бешбармак", 200);
-                System.out.println(besh.getName() + " " + besh.getCalories());
+            case "Cake":
+                printable = new Cake("Ужин");
                 break;
-            }
-            case "3": {
-                Cake ca = new Cake("Пирожное \"Наполеон\"", "Ужин");
-                System.out.println(ca.getName() + " " + ca.getEatingTime());
+            case "Salad":
+                printable = new Salad(200);
                 break;
-            }
-            case "4": {
-                Solyanka sol = new Solyanka("Солянка", "Колбаса, Оливки, Перец, Морковь");
-                System.out.println(sol.getName() + " " + sol.getIngredients());
+            case "Solyanka":
+                printable = new Solyanka("Колбаса, Морковь");
                 break;
-            }
-            case "5": {
-                Salad sal = new Salad("Греческий салат", 300);
-                System.out.println(sal.getName() + " " + sal.getWeight());
-            }
-
         }
-        return className;
+        return printable;
+
+
     }
-
-
-
-
 }
